@@ -34,7 +34,14 @@ def count_vowels(s: str) -> int:
     - int: The number of vowels in the string
     """
     # TODO: Implement this function
-    pass
+
+def count_vowels(s):
+    vowels = "aeiouAEIOU"
+    count = 0
+    for char in s:
+        if char in vowels:
+            count += 1
+    return count
 
 
 # Unit Tests for count_vowels
@@ -64,7 +71,27 @@ def merge_lists(list1: list, list2: list) -> list:
     - list: A new sorted list containing all elements from list1 and list2
     """
     # TODO: Implement this function
-    pass
+def merge_lists(list1: list, list2: list) -> list:
+    merged = []
+    i, j = 0, 0
+
+    while i < len(list1) and j < len(list2):
+        if list1[i] < list2[j]:
+            merged.append(list1[i])
+            i += 1
+        else:
+            merged.append(list2[j])
+            j += 1
+
+    while i < len(list1):
+        merged.append(list1[i])
+        i += 1
+
+    while j < len(list2):
+        merged.append(list2[j])
+        j += 1
+
+    return merged
 
 
 # Unit Tests for merge_lists
@@ -94,8 +121,12 @@ def word_lengths(words: list) -> list:
     Returns:
     - list: A list containing the lengths of the words
     """
-    # TODO: Implement this function
-    pass
+def word_lengths(words: list) -> list:
+    lengths = []
+    for word in words:
+        lengths.append(len(word))
+    return lengths
+
 
 
 # Unit Tests for word_lengths
@@ -122,7 +153,11 @@ def reverse_string(s: str) -> str:
     - str: The reversed string
     """
     # TODO: Implement this function
-    pass
+def reverse_string(s: str) -> str:
+    reversed_s = ""
+    for char in s:
+        reversed_s = char + reversed_s
+    return reversed_s
 
 
 # Unit Tests for reverse_string
@@ -151,7 +186,12 @@ def intersection(list1: list, list2: list) -> list:
     - list: The intersection of the two lists
     """
     # TODO: Implement this function
-    pass
+def intersection(list1: list, list2: list) -> list:
+    result = []
+    for item in list1:
+        if item in list2 and item not in result:
+            result.append(item)
+    return result
 
 
 # Unit Tests for intersection
